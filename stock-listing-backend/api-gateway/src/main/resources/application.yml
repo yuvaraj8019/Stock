@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      
+        - id: AUTHENTICATION-SERVICE
+          uri: lb://AUTHENTICATION-SERVICE
+          predicates:
+            - Path=/api/v1.0/authentication/**
+            
+        - id: USERPROFILE-SERVICE
+          uri: lb://USERPROFILE-SERVICE
+          predicates:
+            - Path=/api/v1.0/userProfile/**
+            
+        - id: WISHLIST-SERVICE
+          uri: lb://WISHLIST-SERVICE
+          predicates:
+            - Path=/api/v1.0/wishlist/**
+            
+        - id: STOCK-SERVICE
+          uri: lb://STOCK-SERVICE
+          predicates:
+            - Path=/api/v1.0/stocks/**
+
+
+       
